@@ -1,0 +1,68 @@
+[
+    {
+      "ticker": "ARBUSDT",
+      "average_price": 0.5129,
+      "balance": 11102.858816
+    },
+    {
+      "ticker": "HFTUSDT",
+      "average_price": 0.2097,
+      "balance": 18053.9532
+    },
+    {
+      "ticker": "ETHUSDT",
+      "average_price": 3490.02,
+      "balance": 0.88518373
+    },
+    {
+      "ticker": "AVAUSDT",
+      "average_price": 0.6129,
+      "balance": 3258.251232
+    },
+    {
+      "ticker": "SOLUSDT",
+      "average_price": 168.18,
+      "balance": 6.346276
+    },
+    {
+      "ticker": "ADAUSDT",
+      "average_price": 0.4297,
+      "balance": 1852.4
+    },
+    {
+      "ticker": "TONUSDT",
+      "average_price": 3.407,
+      "balance": 175.9239
+    },
+    {
+      "ticker": "STRKUSDT",
+      "average_price": 0.5986,
+      "balance": 497.932106
+    },
+    {
+      "ticker": "GRTUSDT",
+      "average_price": 0.21405,
+      "balance": 1293.77493
+    },
+    {
+      "ticker": "APTUSDT",
+      "average_price": 9.765,
+      "balance": 18.37682
+    },
+    {
+      "ticker": "IDUSDT",
+      "average_price": 0.48606,
+      "balance": 335.64402
+    },
+    {
+      "ticker": "DOGSUSDT",
+      "average_price": 0.001075,
+      "balance": 128660.9926
+    },
+    {
+      "ticker": "TRUMPUSDT",
+      "average_price": 41.404,
+      "balance": 2.15308
+    }
+  ]
+  

@@ -1,0 +1,13 @@
+server:
+  host: localhost
+  port: 8080
+  ws_port: 8081
+  retry_timeout: 2
+  timeout: 20
+  log_level: debug
+
+binance_service:
+  address: https://api4.binance.com/api/v3/ticker/price
+  limit: 10
+  burst: 10
+  timeout: 60
