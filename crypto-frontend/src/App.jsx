@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 
 export default function App() {
-  const [tab, setTab] = useState("profit"); // "profit" или "price"
+  const [tab, setTab] = useState("profit"); // "profit" or "price"
   const [prices, setPrices] = useState([]);
   const [profit, setProfit] = useState({ profits: [], revenue: 0 });
   const [query, setQuery] = useState("");
@@ -10,10 +10,7 @@ export default function App() {
   const wsRef = useRef(null);
 
   useEffect(() => {
-    // Выбираем URL в зависимости от таба
     const url = tab === "profit" ? "ws://localhost:8081/ws/profit" : "ws://localhost:8081/ws/price";
-
-    // Создаем WS соединение только один раз для текущей вкладки
     wsRef.current = new WebSocket(url);
 
     wsRef.current.onopen = () => console.log(`WebSocket connected to ${url}`);
@@ -30,13 +27,10 @@ export default function App() {
       }
     };
 
-    // Закрываем WS при размонтировании компонента или смене таба
     return () => {
-      if (wsRef.current) {
-        wsRef.current.close();
-      }
+      if (wsRef.current) wsRef.current.close();
     };
-  }, [tab]); // пересоздается только при смене таба
+  }, [tab]);
 
   const renderPrices = () => {
     const filtered = prices.filter(r =>
@@ -47,8 +41,8 @@ export default function App() {
       <table className="prices-table">
         <thead>
           <tr>
-            <th>Тикер</th>
-            <th>Цена</th>
+            <th>Ticker</th>
+            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -71,15 +65,15 @@ export default function App() {
     return (
       <>
         <div className="summary">
-          Общий доход: <strong>{profit.revenue.toFixed(2)} USDT</strong>
+          Total Revenue: <strong>{profit.revenue.toFixed(2)} USDT</strong>
         </div>
         <table>
           <thead>
             <tr>
-              <th>Тикер</th>
-              <th>Баланс $</th>
-              <th>Профит</th>
-              <th>Профит %</th>
+              <th>Ticker</th>
+              <th>Balance $</th>
+              <th>Profit</th>
+              <th>Profit %</th>
             </tr>
           </thead>
           <tbody>
@@ -110,20 +104,20 @@ export default function App() {
           onClick={() => setTab("profit")}
           className={"tab " + (tab === "profit" ? "active" : "")}
         >
-          Профит
+          Profit
         </div>
         <div
           onClick={() => setTab("price")}
           className={"tab " + (tab === "price" ? "active" : "")}
         >
-          Цены
+          Prices
         </div>
       </div>
 
       <div className="controls">
         <input
           className="search"
-          placeholder="Фильтр по тикеру…"
+          placeholder="Filter by ticker…"
           value={query}
           onChange={e => setQuery(e.target.value)}
         />
